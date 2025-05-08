@@ -83,6 +83,8 @@ async function fetchGitHubData() {
         !forbiddenNames.includes(repo.name) && !hasForbiddenWordInName && !hasForbiddenDescription
       )
     })
+
+    document.title = `Repository — ${nickname.value} (@${username.value})`
   } catch (error) {
     console.error('Error retrieving GitHub data :', error)
   }
