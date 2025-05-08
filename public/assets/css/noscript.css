@@ -1,0 +1,27 @@
+body {
+  background: #1f2937;
+  color: #fff;
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.noscript-message {
+  text-align: center;
+}
+
+.noscript-message h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.noscript-message p {
+  font-size: 1rem;
+}
+
+.noscript-message a {
+  color: #3b82f6;
+  text-decoration: none;
+}

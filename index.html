@@ -1,13 +1,72 @@
+<!--
+
+  by @Nevcapy for %VITE_GITHUB_USERNAME%
+   ___ _ _   ___                  _ _            
+  / __(_) |_| _ \___ _ __  ___ __(_) |_ ___ _ _ _  _ 
+ | (_ | |  _|   / -_) '_ \/ _ (_-< |  _/ _ \ '_| || |
+  \___|_|\__|_|_\___| .__/\___/__/_|\__\___/_|  \_, |
+                    |_|                         |__/  %MODE%
+
+-->
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
     <title>Repository — %VITE_GITHUB_USERNAME%</title>
+    <meta name="title" content="Repository — %VITE_GITHUB_USERNAME%" />
+    <meta
+      name="description"
+      content="Discover all the GitHub repos and primary statistics for %VITE_GITHUB_USERNAME% on this page."
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Repository — %VITE_GITHUB_USERNAME%" />
+    <meta
+      property="og:description"
+      content="Discover all the GitHub repos and primary statistics for %VITE_GITHUB_USERNAME% on this page."
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Repository — %VITE_GITHUB_USERNAME%" />
+    <meta
+      property="twitter:description"
+      content="Discover all the GitHub repos and primary statistics for %VITE_GITHUB_USERNAME% on this page."
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+
+    <!-- Styles -->
+    <noscript>
+      <link rel="stylesheet" href="/assets/css/noscript.css" />
+    </noscript>
   </head>
-  <body>
-    <div id="app"></div>
+  <body
+    class="h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center p-4 overflow-hidden"
+  >
+    <noscript>
+      <h1>Oups!</h1>
+      <p>
+        This application requires JavaScript to be enabled. Please enable JavaScript in your browser
+        settings and refresh the page. <br />
+        <a href="https://www.enable-javascript.com/" target="_blank" rel="noopener noreferrer">
+          How to enable JavaScript?
+        </a>
+      </p>
+    </noscript>
+
+    <div id="app">
+      <div class="loader"></div>
+    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

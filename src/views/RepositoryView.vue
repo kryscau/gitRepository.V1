@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center p-4 overflow-hidden"
-  >
+  <div>
     <div
       class="w-full max-w-md backdrop-blur-sm bg-gray-800/70 rounded-2xl shadow-2xl overflow-hidden flex flex-col h-[calc(100vh-2rem)] border border-gray-700/50"
     >

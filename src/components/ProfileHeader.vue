@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="relative flex flex-col items-center pt-8 pb-5 px-6 bg-gradient-to-b from-gray-800/80 to-gray-800/30"
-  >
+  <div class="relative flex flex-col items-center pt-8 pb-5 px-6">
     <!-- Effet de halo derrière la photo -->
     <div class="absolute top-8 w-20 h-20 bg-blue-500/20 rounded-full blur-xl"></div>
 
