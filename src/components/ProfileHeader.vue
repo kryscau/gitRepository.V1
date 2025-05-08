@@ -11,8 +11,9 @@
         class="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 blur-sm opacity-70"
       ></div>
       <img
-        :src="avatarUrl || '/placeholder.svg'"
+        :src="avatarUrl || '/assets/img/placeholder.jpg'"
         :alt="`${username}'s avatar`"
+        draggable="false"
         class="relative w-20 h-20 rounded-full object-cover border-2 border-gray-700/50 shadow-lg z-10"
       />
     </div>
