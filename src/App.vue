@@ -12,6 +12,7 @@ useSeoMeta({
   canonical: computed(() => {
     return `https://${import.meta.env.VITE_GITHUB_USERNAME}.github.io/#/${route.path.replace('/', '')}`
   }),
+  twitterCard: 'summary_large_image',
 })
 </script>
 

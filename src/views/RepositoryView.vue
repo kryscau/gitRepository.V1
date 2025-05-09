@@ -78,7 +78,7 @@ const repositories = ref([])
 
 async function fetchGitHubData() {
   const GITHUB_TOKEN = import.meta.env.VITE_GITHUB_API_TOKENS
-  const BASE_URL = 'https://api.github.com'
+  const BASE_URL = import.meta.env.VITE_GITHUB_API_URL
 
   try {
     const userResponse = await fetch(`${BASE_URL}/user`, {
@@ -122,6 +122,8 @@ async function fetchGitHubData() {
         !forbiddenNames.includes(repo.name) && !hasForbiddenWordInName && !hasForbiddenDescription
       )
     })
+
+    console.log(repositories.value)
   } catch (error) {
     console.error('Error retrieving GitHub data :', error)
   }
@@ -129,26 +131,25 @@ async function fetchGitHubData() {
 
 useSeoMeta({
   // Basic SEO
-  title: computed(() => `Repository — ${user.value.nickname} (@${user.value.username})`),
+  title: computed(() => `Repositories — ${user.value.nickname} (@${user.value.username})`),
   description: computed(
     () =>
-      `Discover all the GitHub repos and primary statistics for ${user.value.nickname} (@${user.value.username}) on this page.`,
+      `Discover all the GitHub Repositories and primary statistics for ${user.value.nickname} (@${user.value.username}) on this page.`,
   ),
 
   // Open Graph
-  ogTitle: computed(() => `Repository — ${user.value.nickname} (@${user.value.username})`),
+  ogTitle: computed(() => `Repositories — ${user.value.nickname} (@${user.value.username})`),
   ogDescription: computed(
     () =>
-      `Discover all the GitHub repos and primary statistics for ${user.value.nickname} (@${user.value.username}) on this page.`,
+      `Discover all the GitHub Repositories and primary statistics for ${user.value.nickname} (@${user.value.username}) on this page.`,
   ),
 
   // Twitter
-  twitterTitle: computed(() => `Repository — ${user.value.nickname} (@${user.value.username})`),
+  twitterTitle: computed(() => `Repositories — ${user.value.nickname} (@${user.value.username})`),
   twitterDescription: computed(
     () =>
-      `Discover all the GitHub repos and primary statistics for ${user.value.nickname} (@${user.value.username}) on this page.`,
+      `Discover all the GitHub Repositories and primary statistics for ${user.value.nickname} (@${user.value.username}) on this page.`,
   ),
-  twitterCard: 'summary_large_image',
 })
 
 onMounted(() => {

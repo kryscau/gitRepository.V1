@@ -8,9 +8,24 @@
       >
         <div class="p-3">
           <div class="flex justify-between items-start">
-            <h3 class="font-medium text-blue-400 group-hover:text-blue-300 transition-colors">
-              {{ repo.full_name || repo.owner.login + '/' + repo.name }}
-            </h3>
+            <router-link
+              :to="
+                '/repository/' +
+                (repo.full_name.toLowerCase() ||
+                  repo.owner.login.toLowerCase() + '/' + repo.name.toLowerCase())
+              "
+              :title="
+                'See ' +
+                (repo.full_name.toLowerCase() ||
+                  repo.owner.login.toLowerCase() + '/' + repo.name.toLowerCase()) +
+                ' details'
+              "
+              rel="noopener"
+            >
+              <h3 class="font-medium text-blue-400 group-hover:text-blue-300 transition-colors">
+                {{ repo.full_name || repo.owner.login + '/' + repo.name }}
+              </h3>
+            </router-link>
             <div class="flex items-center space-x-3 text-xs text-gray-400">
               <span class="flex items-center">
                 <svg
