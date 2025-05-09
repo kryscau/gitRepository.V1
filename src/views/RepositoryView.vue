@@ -59,7 +59,8 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watchEffect } from 'vue'
+import { ref, onMounted, computed } from 'vue'
+import { useSeoMeta } from '@unhead/vue'
 import ProfileHeader from '@/components/ProfileHeader.vue'
 import RepositoryList from '@/components/RepositoryList.vue'
 
@@ -126,12 +127,28 @@ async function fetchGitHubData() {
   }
 }
 
-watchEffect(() => {
-  const nickname = user.value.nickname
-  const username = user.value.username
-  if (nickname && username) {
-    document.title = `Repository — ${nickname} (@${username})`
-  }
+useSeoMeta({
+  // Basic SEO
+  title: computed(() => `Repository — ${user.value.nickname} (@${user.value.username})`),
+  description: computed(
+    () =>
+      `Discover all the GitHub repos and primary statistics for ${user.value.nickname} (@${user.value.username}) on this page.`,
+  ),
+
+  // Open Graph
+  ogTitle: computed(() => `Repository — ${user.value.nickname} (@${user.value.username})`),
+  ogDescription: computed(
+    () =>
+      `Discover all the GitHub repos and primary statistics for ${user.value.nickname} (@${user.value.username}) on this page.`,
+  ),
+
+  // Twitter
+  twitterTitle: computed(() => `Repository — ${user.value.nickname} (@${user.value.username})`),
+  twitterDescription: computed(
+    () =>
+      `Discover all the GitHub repos and primary statistics for ${user.value.nickname} (@${user.value.username}) on this page.`,
+  ),
+  twitterCard: 'summary_large_image',
 })
 
 onMounted(() => {
