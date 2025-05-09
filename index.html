@@ -54,19 +54,20 @@
     class="h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center p-4 overflow-hidden"
   >
     <noscript>
-      <h1>Oups!</h1>
-      <p>
-        This application requires JavaScript to be enabled. Please enable JavaScript in your browser
-        settings and refresh the page. <br />
-        <a href="https://www.enable-javascript.com/" target="_blank" rel="noopener noreferrer">
-          How to enable JavaScript?
-        </a>
-      </p>
+      <div class="noscript-message">
+        <h1>Oups!</h1>
+        <p>
+          This application requires JavaScript to be enabled. Please enable JavaScript in your
+          browser settings and refresh the page. <br />
+          <a href="https://www.enable-javascript.com/" target="_blank" rel="noopener noreferrer">
+            How to enable JavaScript?
+          </a>
+        </p>
+      </div>
     </noscript>
 
-    <div id="app">
-      <div class="loader"></div>
-    </div>
+    <div id="app"></div>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
