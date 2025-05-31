@@ -1,7 +1,13 @@
 /** @type {import('tailwindcss').Config} */
+import colors from './src/assets/github-colors/colors.json'
+
 export default {
   darkMode: ['class'],
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}', './*.{js,ts,jsx,tsx,mdx,html}'],
+  safelist: Object.entries(colors).flatMap(([lang, data]) => {
+    const hex = data.color?.replace('#', '')
+    return [`bg-[#${hex}/20]`, `text-[#${hex}]`]
+  }),
   theme: {
     extend: {
       colors: {

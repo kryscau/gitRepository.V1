@@ -52,13 +52,7 @@
               {{ repo.description || 'No description has been set.' }}
             </p>
             <div class="flex flex-wrap items-center gap-3 text-sm text-gh-text-secondary">
-              <span class="flex items-center space-x-1" v-if="repo.language">
-                <div class="w-3 h-3 rounded-full" :class="getLanguageClass(repo.language)"></div>
-                <span>{{ repo.language }}</span>
-              </span>
-              <span v-else class="flex items-center space-x-1">
-                <!-- No primary language found -->
-              </span>
+              <LangBadge :lang="repo.language" />
               <span v-if="repo.updated_at">Updated {{ formatDate(repo.updated_at) }}</span>
               <span v-if="repo.created_at">Created {{ formatDate(repo.created_at) }}</span>
             </div>
@@ -100,6 +94,7 @@
 
 <script setup>
 import { formatDistanceToNow } from 'date-fns'
+import LangBadge from '@/components/ui/LangBadge.vue'
 
 defineProps({
   repositories: {
@@ -107,23 +102,6 @@ defineProps({
     required: true,
   },
 })
-
-const getLanguageClass = (language) => {
-  const classes = {
-    HTML: 'bg-orange-500/20 text-orange-300',
-    CSS: 'bg-blue-500/20 text-blue-300',
-    Svelte: 'bg-orange-500/20 text-orange-300',
-    PHP: 'bg-emerald-500/20 text-emerald-300',
-    Astro: 'bg-red-500/20 text-red-300',
-    JavaScript: 'bg-yellow-500/20 text-yellow-300',
-    TypeScript: 'bg-blue-500/20 text-blue-300',
-    Vue: 'bg-green-500/20 text-green-300',
-    Python: 'bg-blue-400/20 text-blue-200',
-    default: 'bg-gray-600/50 text-gray-300',
-  }
-
-  return classes[language] || classes.default
-}
 
 const formatDate = (date) => {
   if (!date) return 'Unknown date'
