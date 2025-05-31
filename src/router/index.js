@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import AllRepositories from '../views/AllRepositories.vue'
-import RepositoryDetailsView from '@/views/old.RepositoryDetailsView.vue'
+import RepositoryDetails from '@/views/RepositoryDetails.vue'
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -13,7 +13,7 @@ const router = createRouter({
     {
       path: '/repository/:owner/:repo',
       name: 'repository-details',
-      component: RepositoryDetailsView,
+      component: RepositoryDetails,
     },
   ],
 })
